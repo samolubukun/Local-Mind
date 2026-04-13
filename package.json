@@ -1,0 +1,56 @@
+{
+	"name": "local-mind",
+	"version": "1.0.0",
+	"description": "Local AI coding assistant powered by Gemini 2.5 Flash-Lite",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"format": "biome format --write .",
+		"lint": "biome lint .",
+		"start": "tsx cli.js",
+		"setup": "tsx cli/setup-command.ts",
+		"verify": "tsx verify-local-mind.ts",
+		"cli": "tsx cli.js"
+	},
+	"bin": {
+		"localmind": "./cli.js"
+	},
+	"keywords": [
+		"gemini",
+		"ai-agent",
+		"coding-assistant",
+		"local-mind",
+		"typescript",
+		"cli-tool"
+	],
+	"private": true,
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@types/cli-progress": "^3.11.6",
+		"@types/figlet": "^1.7.0",
+		"@types/inquirer": "^9.0.8"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
+	},
+	"dependencies": {
+		"@ai-sdk/google": "^3.0.63",
+		"@riza-io/api": "^0.3.0",
+		"ai": "^6.0.159",
+		"boxen": "^8.0.1",
+		"chalk": "^5.4.1",
+		"cli-progress": "^3.12.0",
+		"commander": "^14.0.0",
+		"diff": "^8.0.2",
+		"dotenv": "^16.5.0",
+		"figlet": "^1.8.1",
+		"inquirer": "^12.6.3",
+		"marked": "^15.0.12",
+		"marked-terminal": "^7.3.0",
+		"ora": "^8.2.0",
+		"tsx": "^4.21.0",
+		"yaml": "^2.8.0",
+		"zod": "^3.22.4"
+	},
+	"module": "index.ts"
+}
