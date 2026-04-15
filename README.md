@@ -26,23 +26,12 @@
 
 Local Mind follows a clear, modular architecture designed for local execution:
 
-```mermaid
-graph TD
-    User([User Prompt]) --> CLI[CLI Client]
-    CLI <--> Agent[Gemini Agent]
-    Agent <--> AI[Google Gemini API]
-    Agent -- Request Tool --> Proxy[Tool Proxy]
-    Proxy -- Execute --> FS[File System]
-    Proxy -- Execute --> Shell[Command Shell]
-    Proxy -- Execute --> Git[Git Repo]
-    FS & Shell & Git -- Result --> Proxy
-    Proxy -- Tool Output --> Agent
-    Agent -- Final Answer --> CLI
-```
+<img width="1250" height="1306" alt="localmind" src="https://github.com/user-attachments/assets/bd09ac9b-87c0-4074-99b5-91c74b0fefd9" />
 
-1.  **CLI Client** (`cli.js`): Manages the interactive session, user input, and formatted output.
-2.  **Gemini Agent** (`src/lib/gemini-agent.ts`): The "brain" that communicates with the Google AI SDK and manages the tool-calling loop.
-3.  **Tool Proxy** (`cli/tool-proxy.ts`): The execution layer that safely bridges the agent's requests to your local OS operations.
+
+1.  **CLI Client**: Manages the interactive session, user input, and formatted output.
+2.  **Gemini Agent**: The "brain" that communicates with the Google AI SDK and manages the tool-calling loop.
+3.  **Tool Proxy**: The execution layer that safely bridges the agent's requests to your local OS operations.
 
 ---
 
